@@ -13,6 +13,10 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>SpringBoot</name>
     <description>SpringBoot</description>
+    <packaging>pom</packaging>
+    <modules>
+        <module>Spring-XML</module>
+    </modules>
     <properties>
         <java.version>17</java.version>
         <env.SENTRY_AUTH_TOKEN>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</env.SENTRY_AUTH_TOKEN>
@@ -35,6 +39,11 @@
         </dependency>
 
         <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
@@ -45,6 +54,15 @@
             <groupId>org.yaml</groupId>
             <artifactId>snakeyaml</artifactId>
             <version>2.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.sentry</groupId>
+            <artifactId>sentry</artifactId>
+            <version>6.32.0</version>
         </dependency>
     </dependencies>
 
