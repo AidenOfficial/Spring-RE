@@ -8,6 +8,7 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.ArrayList;
@@ -16,6 +17,31 @@ import java.util.List;
 @Controller
 @RequestMapping("/user")
 public class UserController {
+    @RequestMapping("/getAll")
+    @ResponseBody
+    public List<User> getAll(){
+        System.out.println("---------getAll-----------");
+        List<User> list=new ArrayList<>();
+        list.add(new User("Aiden","Aiden",20,new Date()));
+        list.add(new User("Nico","Nico",20,new Date()));
+        list.add(new User("Sakuta","Sakuta",18,new Date()));
+        list.add(new User("Mai","Mai",19,new Date()));
+
+        return list;
+    }
+    @RequestMapping("/checkName")
+    @ResponseBody
+    public boolean checkName(String name) {
+        System.out.println("---------checkName-----------");
+        System.out.println("name:" + name);
+        //Call Service, Access data, implement function.
+        if ("Aiden".equals(name)) {
+            return true;
+        }else {
+            return false;
+        }
+    }
+
     @RequestMapping("/login6")
     public String login6(User user,HttpServletRequest request){
         System.out.println("---------login6-----------");
